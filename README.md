@@ -1,4 +1,4 @@
-# A recycling app
+# Recycling app
 
 Here is my shoddy documentation on how you guys can get started.
 
