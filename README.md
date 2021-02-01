@@ -30,7 +30,9 @@ In another terminal, forward port 8080 (or whatever was used earlier) using `ngr
 ngrok http 8080
 ```
 
-Open `https://<ngrok-id>.ngrok.io` on your phone, and you should get a pop-up to install as a progressive web app, which is saved to your home screen. (You only get the pop-up once - if you miss it, clear the cache on Chrome and reload the website).
+Open `https://<ngrok-id>.ngrok.io` on your phone, and you should get a pop-up to install as a progressive web app, which is saved to your home screen. You only get the pop-up once - if you miss it, clear the cache on Chrome and reload the website. 
+
+(Service workers only work over HTTPS, which is frustrating, and HTTPS in internal network was difficult for me, which is why I used ngrok.)
 
 If you kill the http-server, and reload the React app on your phone, it should still work since it can run offline.
 
