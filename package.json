@@ -31,7 +31,7 @@
     "eject": "react-scripts eject",
     "start-sw": "http-server ./build",
     "//": "chrome://flags/#unsafely-treat-insecure-origin-as-secure",
-    "start-nw": "set HTTPS=true&&http-server ./build --ssl --cert cert.pem"
+    "start-nw": "set HTTPS=true&&http-server ./build --ssl --cert cert.pem --port 80"
   },
   "eslintConfig": {
     "extends": [
