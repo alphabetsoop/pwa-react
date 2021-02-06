@@ -1,5 +1,4 @@
 import React from 'react';
-import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 
 export class Nav extends React.Component {
