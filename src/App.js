@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Nav } from './components/Nav'
+import { Home } from './screens/Home'
+import { Maps } from './screens/Maps'
+import { Shop } from './screens/Shop'
+import { Settings } from './screens/Settings'
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
+
+  // 404 pages redirect to Home component
+  // Nav is todo
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav></Nav>
+
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/maps" component={Maps} />
+        <Route path="/shop" component={Shop} />
+        <Route path="/settings" component={Settings} />
+        <Route component={Home} /> 
+      </Switch>
     </div>
   );
 }
