@@ -2,14 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/style/index.css';
 import App from './App';
-<<<<<<< HEAD
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
-=======
 import * as serviceWorkerRegistration from './pwa/serviceWorkerRegistration';
 import reportWebVitals from './pwa/reportWebVitals';
->>>>>>> d0f1de9... Restructured files
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>

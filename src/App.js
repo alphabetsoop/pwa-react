@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './assets/style/App.css';
 import { Nav } from './components/Nav'
 import { Home } from './screens/Home'
 import { Maps } from './screens/Maps'
