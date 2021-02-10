@@ -47,10 +47,10 @@ export default function App() {
           </AppBar>
 
           <BottomNavigation value={value} onChange={handleChange} className={classes.bot}>
-            <Link to="/"><BottomNavigationAction label="Home" value="home" icon={<RestoreIcon />} /></Link>
-            <Link to="/"><BottomNavigationAction label="??" value="home" icon={<FavoriteIcon />} /></Link>
-            <Link to="/"><BottomNavigationAction label="??" value="home" icon={<LocationOnIcon />} /></Link>
-            <Link to="/about"><BottomNavigationAction label="Folder" value="about" icon={<FolderIcon />} /></Link>
+            <BottomNavigationAction component={Link} to="/" label="Home" value="home" icon={<RestoreIcon />} />
+            <BottomNavigationAction component={Link} to="/" label="home2" value="home2" icon={<FavoriteIcon />} />
+            <BottomNavigationAction component={Link} to="/" label="home3" value="home3" icon={<LocationOnIcon />} />
+            <BottomNavigationAction component={Link} to="/about" label="Folder" value="about" icon={<FolderIcon />} />
           </BottomNavigation>
 
           <Switch>
