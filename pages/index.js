@@ -1,59 +1,55 @@
 import styles from '../styles/Home.module.css'
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import FolderIcon from '@material-ui/icons/Folder';
+import RestoreIcon from '@material-ui/icons/Restore';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+
+const useStyles = makeStyles({
+  root: {
+    width: 500,
+  },
+
+  bot: {
+    width: '100%',
+    bottom: 0,
+    position: 'fixed'
+  }
+});
 
 export default function Home() {
+  const classes = useStyles();
+
+  const [value, setValue] = useState('home')
+
+  const handleChange = (ev, newValue) => {
+    console.log("Move to ", value)
+    setValue(newValue)
+  }
+
+  // https://github.com/vercel/next.js/tree/canary/packages/create-next-app
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+    <>
+      <AppBar position="static">
+        <Toolbar>
+        <Typography variant="h6">
+            Home
+          </Typography>
+        </Toolbar>
+      </AppBar>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+      <BottomNavigation value={value} onChange={handleChange} className={classes.root, classes.bot}>
+        <BottomNavigationAction label="Recents" value="home" icon={<RestoreIcon />} />
+        <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon />} />
+        <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} />
+        <BottomNavigationAction label="Folder" value="folder" icon={<FolderIcon />} />
+      </BottomNavigation>
+    </>
   )
 }
