@@ -15,13 +15,12 @@ function App() {
   return (
     <div className="App">
       <Nav></Nav>
-
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/maps" component={Maps} />
         <Route path="/shop" component={Shop} />
         <Route path="/settings" component={Settings} />
-        <Route component={Home} /> 
+        <Route component={Home} />
       </Switch>
     </div>
   );
