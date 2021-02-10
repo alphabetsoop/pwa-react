@@ -1,38 +1,21 @@
-# Recycling app
+# Progressive Web App Example
 
-Here is my shoddy documentation on how you guys can get started.
+This example uses [`next-pwa`](https://github.com/shadowwalker/next-pwa) to create a progressive web app (PWA) powered by [Workbox](https://developers.google.com/web/tools/workbox/).
 
-## Getting started
+## Deploy your own
 
-This app was built using `create-react-app` and the `cra-template-pwa` template (read more [here](https://create-react-app.dev/docs/making-a-progressive-web-app)).
+Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/progressive-web-app&project-name=progressive-web-app&repository-name=progressive-web-app)
+
+## How to use
+
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
 
 ```bash
-git clone https://github.com/alphabetsoop/pwa-react.git
-cd pwa-react
-ls
-node -v     # I have Node 14.15.4
-npm install
-npm run start
+npx create-next-app --example progressive-web-app progressive-web-app
+# or
+yarn create next-app --example progressive-web-app progressive-web-app
 ```
 
-### Running on your mobile phone
-
-To see the benefits of PWA, you'll need to build the app, since service workers work on production mode.
-
-Build the app and start a http server:
-```bash
-npm run build 
-npm run start-sw
-```
-
-In another terminal, forward port 8080 (or whatever was used earlier) using `ngrok`.
-```bash 
-ngrok http 8080
-```
-
-Open `https://<ngrok-id>.ngrok.io` on your phone, and you should get a pop-up to install as a progressive web app, which is saved to your home screen. You only get the pop-up once - if you miss it, clear the cache on Chrome and reload the website. 
-
-(Service workers only work over HTTPS, which is frustrating, and HTTPS in internal network was difficult for me, which is why I used ngrok.)
-
-If you kill the http-server, and reload the React app on your phone, it should still work since it can run offline.
-
+Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
