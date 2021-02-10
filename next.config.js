@@ -6,4 +6,14 @@ module.exports = withPWA({
     dest: 'public',
     runtimeCaching,
   },
+
+  async rewrites() {
+    return [
+      {
+        source: '/:any*',
+        destination: '/',
+      },
+    ];
+  },
+
 })
