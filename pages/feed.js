@@ -8,7 +8,6 @@ export default function Feed() {
     //test out how firestore works
     const [message, setMessage] = useState('message')
     const [postList, setPostList] = useState([])
-    let posts = []
 
     const handleChange = (e) => {
         // handles input text change
@@ -38,12 +37,6 @@ export default function Feed() {
                 setPostList(
                     snapshot.docs.map((doc) => doc.data())
                 )
-
-                // posts = []
-
-                // postList.forEach((k) =>
-                //     posts.push(<PostCard title={k.username} content={k.text} />)
-                // );
             }, (error) => {
                 console.log(error)
             })

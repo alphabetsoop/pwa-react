@@ -47,7 +47,7 @@ export default function App() {
   return (
     <>
       <Router>
-          <AppBar position="static">
+          <AppBar position="static" className={classes.top}>
             <Toolbar>
               <Typography variant="h6">
                 {value}
