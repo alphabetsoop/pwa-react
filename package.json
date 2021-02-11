@@ -5,22 +5,25 @@
     "dev": "next dev",
     "start-dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export-static": "next export -o _static",
+    "start-incremental": "next start -H 0.0.0.0 -P ${PORT:-8080}"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
+    "firebase": "^8.2.6",
     "next": "latest",
     "next-pwa": "^3.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0",
-    "webpack": "^5.21.2"
+    "react-router-dom": "^5.2.0"
   },
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^14.14.25",
     "@types/react": "^17.0.1",
-    "typescript": "^4.1.4"
+    "typescript": "^4.1.4",
+    "webpack": "^4.46.0"
   }
 }

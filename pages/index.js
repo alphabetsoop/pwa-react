@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import About from './about'
-import Home from './home'
+import Feed from './feed'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -60,7 +60,7 @@ export default function App() {
               <About />
             </Route>
             <Route path="/">
-              <Home />
+              <Feed />
             </Route>
           </Switch>
 
