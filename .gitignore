@@ -34,6 +34,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# more next
-/public/sw.js.map
+# more
+/.vagrant
 
