@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import db from '../config/firebase';
 import PostCard from '../components/postcard';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Layout from '../components/layout'
 
 export default function Feed() {
     
@@ -45,7 +46,7 @@ export default function Feed() {
     // (e) => setMessage(e.target.value)
     
     return (
-        <>
+        <Layout title="News Feed" highlight="FEED" bartitle="Feed">
             <div>
                 <form> 
                     <input value={message} onChange={handleChange} type="text" placeholder="Send a message to test Firestore" />
@@ -62,6 +63,6 @@ export default function Feed() {
                     <CircularProgress />
                 }
             </div>
-        </>
+        </Layout>
     )
 }
