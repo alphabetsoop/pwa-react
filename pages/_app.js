@@ -1,5 +1,10 @@
 import Head from 'next/head'
-import '../styles/globals.css'
+
+import '../styles/reset.css'
+import '../styles/inherited.css'
+import '../styles/main.css'
+
+import Navigation from '../components/navigation'
 
 export default function MyApp({ Component, pageProps }) {
   return (
@@ -31,6 +36,7 @@ export default function MyApp({ Component, pageProps }) {
         <link rel="apple-touch-icon" href="/apple-icon.png"></link>
         <meta name="theme-color" content="#317EFB" />
       </Head>
+      <Navigation />
       <Component {...pageProps} />
     </>
   )

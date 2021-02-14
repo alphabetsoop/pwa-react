@@ -1,10 +1,14 @@
 import React from 'react'
-
 import Link from 'next/link'
+
+import { AppBar, BottomNavigation } from '@material-ui/core';
 
 const navigation = () => {
   return (
     <nav>
+      <AppBar position="fixed">
+        <Toolbar></Toolbar>
+      </AppBar>
       <ul>
         <li>
           <Link href="/">
@@ -28,6 +32,7 @@ const navigation = () => {
         </li>
       </ul>
     </nav>
+    // Bottom Nav
   )
 }
 
