@@ -4,8 +4,13 @@
 
 package-lock.json
 public/
+<<<<<<< HEAD
 /.vagrant
 Vagrantfile
+=======
+.eslintcache
+
+>>>>>>> added news api component
 
 ################################
 ## Boiler-plate
