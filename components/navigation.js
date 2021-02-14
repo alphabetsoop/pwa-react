@@ -1,16 +1,23 @@
 import React from 'react'
 import Link from 'next/link'
 
-import {
-  AppBar,
-  Toolbar,
-  BottomNavigation
-} from '@material-ui/core';
+// Components
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 
-const navigation = () => {
+// Icons
+import HomeIcon from '@material-ui/icons/Home';
+import RoomIcon from '@material-ui/icons/Room';
+import PublicIcon from '@material-ui/icons/Public';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+
+const navigation = (props) => {
   return (
     <nav>
-      <AppBar position="fixed">
+      <AppBar id="top-nav" position="fixed">
         <Toolbar>
           <Link href="/">
             <a>Home</a>
@@ -26,8 +33,16 @@ const navigation = () => {
           </Link>
         </Toolbar>
       </AppBar>
-    </nav>
-    // Bottom Nav
+
+    <BottomNavigation id="bottom-nav" value={props.value} onChange={props.onChange} showLabels>
+      <BottomNavigationAction label="Home" icon={<HomeIcon />} />
+      <BottomNavigationAction label="Locations" icon={<RoomIcon />} />
+      <BottomNavigationAction label="Information" icon={<PublicIcon />} />
+      <BottomNavigationAction label="Challenges" icon={<FavoriteIcon />} />
+      {/* <BottomNavigationAction component={Link} to="/about" label="About" value="About" icon={<FolderIcon />} />
+      <BottomNavigationAction component={Link} to="/community" label="Community" value="Community" icon={<LocationOnIcon />} /> */}
+    </BottomNavigation>
+  </nav>
   )
 }
 

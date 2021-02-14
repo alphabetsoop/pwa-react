@@ -1,12 +1,19 @@
-import Head from 'next/head'
+// Setup
+import { useState } from 'react'
 
+// Components
+import Head from 'next/head'
+import Navigation from '../components/navigation'
+
+// Styles
 import '../styles/reset.css'
 import '../styles/inherited.css'
 import '../styles/main.css'
 
-import Navigation from '../components/navigation'
 
 export default function MyApp({ Component, pageProps }) {
+  const [page, setPage] = useState('Home')
+
   return (
     <>
       <Head>
@@ -18,25 +25,12 @@ export default function MyApp({ Component, pageProps }) {
         />
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
-        <title>Next.js PWA Example</title>
+        
+        <title>Recycling PWA</title>
 
         <link rel="manifest" href="/manifest.json" />
-        <link
-          href="/icons/favicon-16x16.png"
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-        />
-        <link
-          href="/icons/favicon-32x32.png"
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-        />
-        <link rel="apple-touch-icon" href="/apple-icon.png"></link>
-        <meta name="theme-color" content="#317EFB" />
       </Head>
-      <Navigation />
+      <Navigation value={page} onChange={(evt, value) => { setPage(value) }}/>
       <Component {...pageProps} />
     </>
   )
