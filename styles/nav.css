@@ -1,0 +1,43 @@
+body {
+  height: 100vh;
+}
+
+.top-nav {
+  font-size: 1rem;
+}
+
+.top-nav svg {
+  font-size: 1.25em;
+}
+
+.top-nav a {
+  margin: 0 1em;
+  font-size: 0.8em;
+}
+
+#top-nav__desktop {
+  display: none;
+}
+
+#top-nav__desktop svg {
+  margin-right: auto;
+}
+
+#top-nav__mobile div {
+  justify-content: center;
+}
+
+#bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  #top-nav__desktop {
+    display: block;
+  }
+  #top-nav__mobile, #bottom-nav {
+    display: none;
+  }
+}

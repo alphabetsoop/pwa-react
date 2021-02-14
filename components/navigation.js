@@ -17,8 +17,9 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 const navigation = (props) => {
   return (
     <nav>
-      <AppBar id="top-nav" position="fixed">
+      <AppBar id="top-nav__desktop" className="top-nav" position="sticky">
         <Toolbar>
+          <i id="top-nav-logo" className="fas fa-recycle"></i>
           <Link href="/">
             <a>Home</a>
           </Link>
@@ -31,6 +32,12 @@ const navigation = (props) => {
           <Link href="/challenges">
             <a>Challenges</a>
           </Link>
+        </Toolbar>
+      </AppBar>
+      
+      <AppBar id="top-nav__mobile" className="top-nav" position="sticky">
+        <Toolbar>
+          <i id="top-nav-logo" class="fas fa-recycle"></i>
         </Toolbar>
       </AppBar>
 
