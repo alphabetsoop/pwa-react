@@ -16,7 +16,6 @@ import '../styles/locations.css'
 import '../styles/information.css'
 import '../styles/challenges.css'
 
-
 export default function MyApp({ Component, pageProps }) {
   const [page, setPage] = useState('Home')
 
@@ -31,13 +30,13 @@ export default function MyApp({ Component, pageProps }) {
         />
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
-        
+
         <title>Recycling PWA</title>
 
         <link rel="manifest" href="/manifest.json" />
         <script src="https://kit.fontawesome.com/bae1753173.js" crossOrigin="anonymous"></script>
       </Head>
-      <Navigation value={page} onChange={(evt, value) => { setPage(value) }}/>
+      <Navigation value={page} onChange={(evt, value) => { setPage(value) }} />
       <Component {...pageProps} />
     </>
   )
