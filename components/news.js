@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from "react";
 
 export default class News extends Component {
     constructor(props) {
@@ -9,7 +9,7 @@ export default class News extends Component {
     }
 
     componentDidMount() {
-        fetch('https://newsapi.org/v2/everything?q=recycling&apiKey=4c7835df1ae94b67af7b489d0c5bcaa7')
+        fetch('https://newsapi.org/v2/everything?q=recycling&language=en&apiKey=4c7835df1ae94b67af7b489d0c5bcaa7')
             .then((response) => {
                 return response.json();
             })
@@ -26,7 +26,7 @@ export default class News extends Component {
             <div className="News">
                 {this.state.articles.map((item, index) => {
                     return (
-                        <h2>{item.title}</h2>
+                        <h2>{item.title} | {item.url}</h2>
                     )
                 })}
             </div>
