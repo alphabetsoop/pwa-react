@@ -4,7 +4,8 @@
 
 package-lock.json
 public/
-
+/.vagrant
+Vagrantfile
 
 ################################
 ## Boiler-plate
