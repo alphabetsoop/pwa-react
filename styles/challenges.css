@@ -3,8 +3,12 @@
     stroke-linecap: round;
 }
 
+.challenge-card {
+    margin: 10px;
+}
+
 .caption {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: inherit;
     font-weight: 500;
     line-height: 1.66;
     letter-spacing: 0.03333em;
@@ -28,6 +32,7 @@
 .container-about {
     display: flex;
     flex-direction: column;
+    width: 60%;
 }
   
 .container-progress {
