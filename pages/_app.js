@@ -35,7 +35,7 @@ export default function MyApp({ Component, pageProps }) {
         <title>Recycling PWA</title>
 
         <link rel="manifest" href="/manifest.json" />
-        <script src="https://kit.fontawesome.com/bae1753173.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/bae1753173.js" crossOrigin="anonymous"></script>
       </Head>
       <Navigation value={page} onChange={(evt, value) => { setPage(value) }}/>
       <Component {...pageProps} />
