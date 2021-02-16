@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -7,9 +8,16 @@ import Box from '@material-ui/core/Box';
 import ButtonBase from '@material-ui/core/ButtonBase';
 
 export function CircularProgressCaption(props) {
-
-    const val = Math.round(100*(props.current/props.total))
+    const [val, setVal] = useState(0)
     
+    const valEnd = Math.round(100*(props.current/props.total))
+    
+    useEffect(() => {
+        setTimeout(() => {
+            setVal(valEnd)
+        }, 100)
+    }, [])
+
     return (
         <Box position="relative" display="inline-flex">
           <CircularProgress variant="determinate" 

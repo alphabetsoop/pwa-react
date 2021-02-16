@@ -2,7 +2,7 @@
   "name": "progressive-web-app",
   "version": "0.1.0",
   "scripts": {
-    "dev": "NODE_ENV=development next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
