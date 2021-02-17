@@ -37,7 +37,7 @@ const navigation = (props) => {
       
       <AppBar id="top-nav__mobile" className="top-nav" position="sticky">
         <Toolbar>
-          <i id="top-nav-logo" class="fas fa-recycle"></i>
+          <i id="top-nav-logo" className="fas fa-recycle"></i>
         </Toolbar>
       </AppBar>
 
