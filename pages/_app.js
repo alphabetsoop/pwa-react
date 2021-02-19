@@ -10,7 +10,7 @@ import Navigation from '../components/navigation'
 // Styles
 import '../styles/reset.css'
 import '../styles/inherited.css'
-import '../styles/nav.css'
+import '../styles/nav.scss'
 import '../styles/index.css'
 import '../styles/locations.css'
 import '../styles/information.css'

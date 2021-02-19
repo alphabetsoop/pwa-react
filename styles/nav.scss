@@ -1,36 +1,30 @@
 body {
-  height: 100vh;
-}
-
-#main-navigation {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  min-height: 100vh;
 }
 
 .top-nav {
   font-size: 1rem;
-}
 
-.top-nav svg {
-  font-size: 1.25em;
-}
+  svg {
+    font-size: 1.25em;
+  }
 
-.top-nav a {
-  margin: 0 1em;
-  font-size: 0.8em;
+  a {
+    margin: 0 1em;
+    font-size: 0.8em;
+  }
 }
 
 #top-nav__desktop {
   display: none;
-}
 
-#top-nav__desktop svg {
-  margin-right: auto;
+  svg {
+    margin-right: auto;
+  }
 }
 
 #top-nav__mobile div {
-  justify-content: center;
+  justify-content: space-between;
 }
 
 #bottom-nav {
@@ -38,6 +32,7 @@ body {
   bottom: 0;
   width: 100%;
   z-index: 10;
+  border-top: solid 1px rgba(black, 0.2)
 }
 
 @media only screen and (min-width: 600px) {
