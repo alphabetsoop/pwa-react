@@ -32,6 +32,9 @@ const navigation = (props) => {
           <Link href="/challenges">
             <a>Challenges</a>
           </Link>
+          <Link href="/news">
+            <a>News</a>
+          </Link>
         </Toolbar>
       </AppBar>
       {/* </li>
