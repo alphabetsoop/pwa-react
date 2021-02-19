@@ -14,3 +14,11 @@
     font-size: 1.5rem;
     width: 100%;
   }
+
+i.compass.icon
+{
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+    z-index: 10;
+}
