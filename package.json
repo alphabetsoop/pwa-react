@@ -8,10 +8,15 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@reach/combobox": "^0.13.0",
+    "@react-google-maps/api": "^2.1.1",
+    "dotenv": "^8.2.0",
     "next": "latest",
     "next-pwa": "^3.1.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-combobox": "^0.1.2",
+    "react-dom": "^17.0.1",
+    "use-places-autocomplete": "^1.9.1"
   },
   "license": "MIT",
   "devDependencies": {
