@@ -27,6 +27,7 @@ export default class News extends Component {
                 {this.state.articles.map((item, index) => {
                     return (
                         <div class="news-card">
+                            <img src={item.urlToImage}></img>
                             <h2>{item.title}</h2>
                             <p>{item.content}</p>
                             <a href={item.url} target="_blank">Read Article</a>
