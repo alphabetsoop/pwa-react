@@ -26,7 +26,11 @@ export default class News extends Component {
             <div className="News">
                 {this.state.articles.map((item, index) => {
                     return (
-                        <h2>{item.title} | {item.url}</h2>
+                        <div>
+                            <h2>{item.title}</h2>
+                            <p>{item.content}</p>
+                            <a href={item.url} target="_blank">Read Article</a>
+                        </div>
                     )
                 })}
             </div>
