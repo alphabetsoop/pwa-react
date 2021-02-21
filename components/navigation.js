@@ -10,6 +10,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import Button from '@material-ui/core/Button';
 import LoginDialog from '../components/dialog/login.js';
 
 // Icons
@@ -21,10 +22,12 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 const navigation = (props) => {
 
   const [isDialogVisible, setDialogVisible] = useState(false)
+  const [emauthAddress, setEmauthAddress] = useState("")
+  const [emauthPassword, setEmauthPassword] = useState("")
   const dialogFullScreen = useMediaQuery(useTheme().breakpoints.down('sm'))
 
   // change dialog visibility
-  const handleClickAccount = () => {
+  function handleClickAccount() {
     setDialogVisible(!isDialogVisible)
   }
 
@@ -46,8 +49,12 @@ const navigation = (props) => {
             <a>Challenges</a>
           </Link>
           <Link href="/#">
-            <a onClick={handleClickAccount}>My Account</a>
+            <a onClick={handleClickAccount}>Sign in</a>
           </Link>
+          <Button onClick={handleClickAccount}>
+            Create an account
+          </Button>
+      
         </Toolbar>
       </AppBar>
 
@@ -55,7 +62,10 @@ const navigation = (props) => {
         fullScreen={dialogFullScreen}
         open={isDialogVisible}
         onClose={handleClickAccount}
-        onSubmit={handleClickAccount}
+        emauthAddress={emauthAddress}
+        handleChangeEmail={setEmauthAddress}
+        emauthPassword={emauthPassword}
+        handleChangePassword={setEmauthPassword}
       />
       
       <AppBar id="top-nav__mobile" className="top-nav" position="sticky">

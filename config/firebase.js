@@ -18,6 +18,16 @@ if (!firebase.apps.length) {
     firebaseApp = firebase.app(); // already initialized
 }
 
+firebase.auth().onAuthStateChanged( (user) => {
+    if (!user) {
+        console.log("No one is signed in, currentUser gives", firebase.auth().currentUser)
+    } else {
+        console.log(firebase.auth().currentUser)
+    }
+    window.user = user; 
+    console.log("window.user", window.user)
+});
+
 // firebase.analytics();
 
 const db = firebaseApp.firestore();
