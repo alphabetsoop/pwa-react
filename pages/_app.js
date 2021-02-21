@@ -16,6 +16,8 @@ import '../styles/locations.css'
 import '../styles/information.css'
 import '../styles/challenges.css'
 
+// Load .env
+// require('dotenv').config();
 
 export default function MyApp({ Component, pageProps }) {
   const [page, setPage] = useState('Home')

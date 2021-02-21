@@ -1,4 +1,7 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
+import { useTheme } from '@material-ui/core/styles';
 import Link from 'next/link'
 
 // Components
@@ -7,6 +10,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import LoginDialog from '../components/dialog/login.js';
 
 // Icons
 import HomeIcon from '@material-ui/icons/Home';
@@ -15,6 +19,15 @@ import PublicIcon from '@material-ui/icons/Public';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const navigation = (props) => {
+
+  const [isDialogVisible, setDialogVisible] = useState(false)
+  const dialogFullScreen = useMediaQuery(useTheme().breakpoints.down('sm'))
+
+  // change dialog visibility
+  const handleClickAccount = () => {
+    setDialogVisible(!isDialogVisible)
+  }
+
   return (
     <nav>
       <AppBar id="top-nav__desktop" className="top-nav" position="sticky">
@@ -32,8 +45,18 @@ const navigation = (props) => {
           <Link href="/challenges">
             <a>Challenges</a>
           </Link>
+          <Link href="/#">
+            <a onClick={handleClickAccount}>My Account</a>
+          </Link>
         </Toolbar>
       </AppBar>
+
+      <LoginDialog 
+        fullScreen={dialogFullScreen}
+        open={isDialogVisible}
+        onClose={handleClickAccount}
+        onSubmit={handleClickAccount}
+      />
       
       <AppBar id="top-nav__mobile" className="top-nav" position="sticky">
         <Toolbar>
