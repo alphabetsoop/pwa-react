@@ -1,29 +1,13 @@
 .News{
     width: 90%;
-    max-width: auto;
     margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-gap: 20px;
-}
-
-@media only screen and (min-width: 500px){
-    .News{
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media only screen and (min-width: 850px){
-    .News{
-        grid-template-columns: repeat(4, 1fr);
-    }
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .news-card {
-    width: 400px;
     border: solid 2px black;
     padding: 18px;
     margin: 18px;
