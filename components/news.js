@@ -9,7 +9,7 @@ export default class News extends Component {
     }
 
     componentDidMount() {
-        fetch('https://newsapi.org/v2/everything?q=recycling&language=en&apiKey=4c7835df1ae94b67af7b489d0c5bcaa7')
+        fetch('https://newsapi.org/v2/everything?qInTitle=recycling&sources=associated-press,reuters&language=en&apiKey=4c7835df1ae94b67af7b489d0c5bcaa7')
             .then((response) => {
                 return response.json();
             })
