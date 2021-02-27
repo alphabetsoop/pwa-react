@@ -49,7 +49,7 @@ const options =
 const locations = () => {
   const {isLoaded, loadError} = useLoadScript(
     {
-        googleMapsApiKey: "AIzaSyAIqcwHMQa8bUBR3Z0uFoegzSgC5Gvgs8k",
+        googleMapsApiKey: "",
         libraries,
     }
 ); 
