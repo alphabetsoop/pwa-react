@@ -6,6 +6,8 @@ package-lock.json
 public/
 /.vagrant
 Vagrantfile
+.eslintcache
+
 
 ################################
 ## Boiler-plate

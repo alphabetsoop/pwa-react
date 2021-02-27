@@ -32,9 +32,20 @@ const navigation = (props) => {
           <Link href="/challenges">
             <a>Challenges</a>
           </Link>
+          <Link href="/news">
+            <a>News</a>
+          </Link>
         </Toolbar>
       </AppBar>
-      
+      {/* </li>
+        <li>
+          <Link href="/news">
+            <a>News API Test</a>
+          </Link>
+        </li>
+      </ul>
+    </nav> */}
+
       <AppBar id="top-nav__mobile" className="top-nav" position="sticky">
         <Toolbar>
           <i id="top-nav-logo" className="fas fa-recycle"></i>
@@ -42,15 +53,15 @@ const navigation = (props) => {
         </Toolbar>
       </AppBar>
 
-    <BottomNavigation id="bottom-nav" value={props.value} onChange={props.onChange} showLabels>
-      <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-      <BottomNavigationAction label="Locations" icon={<RoomIcon />} />
-      <BottomNavigationAction label="Information" icon={<PublicIcon />} />
-      <BottomNavigationAction label="Challenges" icon={<FavoriteIcon />} />
-      {/* <BottomNavigationAction component={Link} to="/about" label="About" value="About" icon={<FolderIcon />} />
+      <BottomNavigation id="bottom-nav" value={props.value} onChange={props.onChange} showLabels>
+        <BottomNavigationAction label="Home" icon={<HomeIcon />} />
+        <BottomNavigationAction label="Locations" icon={<RoomIcon />} />
+        <BottomNavigationAction label="Information" icon={<PublicIcon />} />
+        <BottomNavigationAction label="Challenges" icon={<FavoriteIcon />} />
+        {/* <BottomNavigationAction component={Link} to="/about" label="About" value="About" icon={<FolderIcon />} />
       <BottomNavigationAction component={Link} to="/community" label="Community" value="Community" icon={<LocationOnIcon />} /> */}
-    </BottomNavigation>
-  </nav>
+      </BottomNavigation>
+    </nav>
   )
 }
 
