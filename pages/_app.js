@@ -17,6 +17,7 @@ import '../styles/information.css'
 import '../styles/challenges.css'
 
 
+
 export default function MyApp({ Component, pageProps }) {
   const [page, setPage] = useState('Home')
 
