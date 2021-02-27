@@ -1,0 +1,52 @@
+$linear-gradient: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
+
+#information-page {
+    height: 90vh;
+    display: grid;
+    grid-template-areas: "main main" "secondary tertiary";
+
+    @media only screen and (max-width: 600px) {
+        height: 85vh;
+    }
+
+    .info-section {
+        margin: 1rem;
+        border-radius: 10px;
+        padding: 2rem;
+        color: white;
+        display: flex;
+        align-items: flex-end;
+        cursor: pointer;
+        transition: box-shadow 200ms ease;
+
+        .card-title {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        &#main-info-section {
+            grid-area: main;
+            // background-color: teal;
+            background: $linear-gradient, url('../public/images/nick-fewings--2lJGRIY5P0-unsplash.jpg') top;
+        }
+        
+        &#secondary-info-section {
+            grid-area: secondary;
+            // background-color: rebeccapurple;
+            background: $linear-gradient, url('../public/images/john-o-nolan-uMWPrcRsrto-unsplash.jpg') center;
+            background-size: cover;
+            
+        }
+        
+        &#tertiary-info-section {
+            grid-area: tertiary;
+            // background-color: salmon;
+            background: $linear-gradient, url('../public/images/gary-chan-YzSZN3qvHeo-unsplash.jpg') center;
+            background-size: cover;
+        }
+
+        &:hover {
+            box-shadow: 0 2px 12px 0 rgba(black, 0.5);
+        }
+    }
+}

@@ -1,6 +1,6 @@
 import React, {useCallback, useState, useRef} from "react";
-import mapStyles from "../styles/mapStyles.js"; 
-import 'semantic-ui-css/semantic.min.css'; 
+import mapStyles from "../styles/mapStyles.js";
+import Compass from "../public/icons/compass.svg"
 // Google Map libraries
 import{
     GoogleMap,
@@ -91,15 +91,18 @@ export default locations
 // Locate will allow the users to click an icon and have the maps use their current location determined from the browser. 
 function Locate ({landOn})
 {
-  return( <button onClick={() =>{
-    navigator.geolocation.getCurrentPosition((position) => {
-      landOn({
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      }); 
-    }, () => null); 
-  }}><i className="compass icon"/>
-  </button> );
+  return(
+    <button onClick={() => {
+      navigator.geolocation.getCurrentPosition((position) => {
+        landOn({
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        }); 
+      }, () => null ); 
+    }}>
+      <Compass id="map-compass" />
+    </button>
+  );
 }
 
 //goTo has been set up as a prop that can be passed into the Search function
