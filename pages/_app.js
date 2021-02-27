@@ -1,7 +1,7 @@
 // Setup
 import { useState } from 'react'
-import { config } from '@fortawesome/fontawesome-svg-core'
-config.autoAddCss = false
+// import { config } from '@fortawesome/fontawesome-svg-core'
+// config.autoAddCss = false
 
 // Components
 import Head from 'next/head'
@@ -14,7 +14,7 @@ import '../styles/nav.scss'
 import '../styles/news.scss'
 import '../styles/index.css'
 import '../styles/locations.css'
-import '../styles/information.css'
+import '../styles/information.scss'
 import '../styles/challenges.css'
 
 export default function MyApp({ Component, pageProps }) {
@@ -35,7 +35,7 @@ export default function MyApp({ Component, pageProps }) {
         <title>Recycling PWA</title>
 
         <link rel="manifest" href="/manifest.json" />
-        <script src="https://kit.fontawesome.com/bae1753173.js" crossOrigin="anonymous"></script>
+        {/* <script src="https://kit.fontawesome.com/bae1753173.js" crossOrigin="anonymous"></script> */}
       </Head>
       <Navigation value={page} onChange={(evt, value) => { setPage(value) }} />
       <Component {...pageProps} />

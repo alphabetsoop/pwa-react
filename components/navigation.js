@@ -9,17 +9,19 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 
 // Icons
+import Logo from '../public/icons/logo.svg';
 import HomeIcon from '@material-ui/icons/Home';
 import RoomIcon from '@material-ui/icons/Room';
 import PublicIcon from '@material-ui/icons/Public';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import LibraryBooks from '@material-ui/icons/LibraryBooks';
 
 const navigation = (props) => {
   return (
     <nav>
       <AppBar id="top-nav__desktop" className="top-nav" position="sticky">
         <Toolbar>
-          <i id="top-nav-logo" className="fas fa-recycle"></i>
+          <Logo id="top-nav-logo" />
           <Link href="/">
             <a>Home</a>
           </Link>
@@ -37,29 +39,29 @@ const navigation = (props) => {
           </Link>
         </Toolbar>
       </AppBar>
-      {/* </li>
-        <li>
-          <Link href="/news">
-            <a>News API Test</a>
-          </Link>
-        </li>
-      </ul>
-    </nav> */}
 
       <AppBar id="top-nav__mobile" className="top-nav" position="sticky">
         <Toolbar>
-          <i id="top-nav-logo" className="fas fa-recycle"></i>
           <Typography variant="h6">{props.value}</Typography>
         </Toolbar>
       </AppBar>
 
       <BottomNavigation id="bottom-nav" value={props.value} onChange={props.onChange} showLabels>
-        <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-        <BottomNavigationAction label="Locations" icon={<RoomIcon />} />
-        <BottomNavigationAction label="Information" icon={<PublicIcon />} />
-        <BottomNavigationAction label="Challenges" icon={<FavoriteIcon />} />
-        {/* <BottomNavigationAction component={Link} to="/about" label="About" value="About" icon={<FolderIcon />} />
-      <BottomNavigationAction component={Link} to="/community" label="Community" value="Community" icon={<LocationOnIcon />} /> */}
+        <Link href="/" passHref>
+          <BottomNavigationAction label="Home" icon={<HomeIcon />} />
+        </Link>
+        <Link href="/information" passHref>
+          <BottomNavigationAction label="Locations" icon={<RoomIcon />} />
+        </Link>
+        <Link href="/locations" passHref>
+          <BottomNavigationAction label="Information" icon={<PublicIcon />} />
+        </Link>
+        <Link href="/challenges" passHref>
+          <BottomNavigationAction label="Challenges" icon={<FavoriteIcon />} />
+        </Link>
+        <Link href="/news" passHref>
+          <BottomNavigationAction label="News" icon={<LibraryBooks />} />
+        </Link>
       </BottomNavigation>
     </nav>
   )

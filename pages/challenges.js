@@ -4,8 +4,6 @@ import ChallengeCard from '../components/challengecard.js'
 const challenges = () => {
   return (
     <div>
-      <h1>Challenges v2 </h1>
-
       <ChallengeCard 
         about="Recycle" 
         detail="Recycling is a vital first step to protecting the planet. " 
