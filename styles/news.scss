@@ -12,7 +12,7 @@
     padding: 18px;
     margin: 18px;
     border-radius: 25px;
-    box-shadow: 0 0 12px 0 rgba(black, 0.2);
+    box-shadow: 0 0 12px 0 rgba(black, 0.4);
 
     img {
         max-width: 100%;
@@ -24,7 +24,7 @@
         width: 100px;
         margin: 2em auto 1em;
         text-align: center;
-        font-size: 12px;
+        font-size: 14px;
         color: green;
         line-height: 1;
         position: relative;
@@ -47,5 +47,8 @@
             }
         }
     }
-    
+}
+
+.news-button {
+    text-align: center;
 }
