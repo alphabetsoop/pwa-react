@@ -7,62 +7,52 @@ export default class News extends Component {
             articles: [],
             numArticles: 4
         }
-        this.loadMoreArticles = this.loadMoreArticles.bind(this);
+        // this.loadMoreArticles = this.loadMoreArticles.bind(this);
     }
 
     componentDidMount() {
-        console.log(this.getSelectedValue())
-        var newsUrl;
-        if (this.getSelectedValue() == "all-articles") {
-            console.log("You want all of the articles")
-            newsUrl = 'https://newsapi.org/v2/everything?q=recycling&pageSize=100&apiKey=4c7835df1ae94b67af7b489d0c5bcaa7';
-        }
-        if (this.getSelectedValue() == "reuters-articles") {
-            console.log("You only want articles from reuters")
-            newsUrl = 'https://newsapi.org/v2/everything?q=recycling&sources=reuters&pageSize=100&apiKey=4c7835df1ae94b67af7b489d0c5bcaa7';
-        }
-        fetch(newsUrl)
-            .then((response) => {
-                return response.json();
-            })
-            .then((myJson) => {
-                this.setState({
-                    articles: myJson.articles
-                });
-            });
-    }
+        console.log("DIDMOUNT")
+        // this.dropdown.addEventListener('select', (event) => {
+        let dropdown = document.getElementById("choice");
 
-    loadMoreArticles() {
-        this.setState((previousNumArticles) => {
-            var maxArticles;
-            if (this.getSelectedValue == "all-articles") {
-                maxArticles = 100;
-            }
-            if (this.getSelectedValue == "reuters-articles") {
-                maxArticles = 16;
-            }
-            if (previousNumArticles.numArticles + 4 > maxArticles) {
-                alert("Maximum number of articles have been loaded")
+        dropdown.addEventListener('input', (event) => {
+            let category = event.target.value;
+            let query = null;
+
+            if (category == null) {
+                query = "https://newsapi.org/v2/everything?q=recycling&pageSize=100&apiKey=4c7835df1ae94b67af7b489d0c5bcaa7"
             } else {
-                return { numArticles: previousNumArticles.numArticles + 4 }
+                query = "https://newsapi.org/v2/everything?q=recycling&sources=" + category + "&pageSize=100&apiKey=4c7835df1ae94b67af7b489d0c5bcaa7"
             }
+
+            this.fetchArticles(query)
         })
     }
 
-    getSelectedValue() {
-        var selectedValue = document.getElementById("choice").value;
-        return { selectedValue }
+    fetchArticles(query) {
+        console.log("FETCH")
+        fetch(query)
+        .then((response) => {
+            return response.json();
+        })
+        .then((myJson) => {
+            console.log(myJson)
+            this.setState({
+                articles: myJson.articles
+            });
+            // console.log(this.articles)
+        });
     }
 
-
     render() {
-        //console.log(this.state);
+        console.log("RENDER")
+        console.log(this.state.articles)
         return (
             <>
                 <div>
-                    <select id="choice" onChange={this.getSelectedValue}>
-                        <option value="all-articles" defaultValue>All articles</option>
-                        <option value="reuters-articles">Reuters</option>
+                    <select id="choice">
+                        <option value="all" defaultValue>All articles</option>
+                        <option value="reuters">Reuters</option>
                     </select>
                 </div>
                 <div className="News">
