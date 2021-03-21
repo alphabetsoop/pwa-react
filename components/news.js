@@ -5,23 +5,33 @@ export default class News extends Component {
         super(props);
         this.state = {
             articles: [],
-            numArticles: 4
+            numArticles: 4,
+            newsSource: "all",
         }
         this.loadMoreArticles = this.loadMoreArticles.bind(this);
+        this.getSelectedValue = this.getSelectedValue.bind(this);
     }
 
     componentDidMount() {
-        console.log(this.getSelectedValue())
-        var newsUrl;
-        if (this.getSelectedValue() == "all-articles") {
-            console.log("You want all of the articles")
-            newsUrl = 'https://newsapi.org/v2/everything?q=recycling&pageSize=100&apiKey=4c7835df1ae94b67af7b489d0c5bcaa7';
-        }
-        if (this.getSelectedValue() == "reuters-articles") {
-            console.log("You only want articles from reuters")
-            newsUrl = 'https://newsapi.org/v2/everything?q=recycling&sources=reuters&pageSize=100&apiKey=4c7835df1ae94b67af7b489d0c5bcaa7';
-        }
-        fetch(newsUrl)
+        let dropdown = document.getElementById("choice")
+        let newsUrlDefault = "https://newsapi.org/v2/everything?q=recycling&pageSize=100&apiKey=4c7835df1ae94b67af7b489d0c5bcaa7";
+        dropdown.addEventListener('input', (event) => {
+            let category = event.target.value;
+            let newsUrl
+            if (category == "all") {
+                console.log("You want all articles!")
+                newsUrl = "https://newsapi.org/v2/everything?q=recycling&pageSize=100&apiKey=4c7835df1ae94b67af7b489d0c5bcaa7";
+            } else {
+                console.log("You only want " + category + " articles")
+                newsUrl = "https://newsapi.org/v2/everything?q=recycling&sources=" + category + "&pageSize=100&apiKey=4c7835df1ae94b67af7b489d0c5bcaa7";
+            }
+            this.fetchNews(newsUrl)
+        })
+        this.fetchNews(newsUrlDefault)
+    }
+
+    fetchNews(query) {
+        fetch(query)
             .then((response) => {
                 return response.json();
             })
@@ -35,10 +45,10 @@ export default class News extends Component {
     loadMoreArticles() {
         this.setState((previousNumArticles) => {
             var maxArticles;
-            if (this.getSelectedValue == "all-articles") {
+            if (this.state.newsSource == "all") {
                 maxArticles = 100;
             }
-            if (this.getSelectedValue == "reuters-articles") {
+            if (this.state.newsSource == "reuters") {
                 maxArticles = 16;
             }
             if (previousNumArticles.numArticles + 4 > maxArticles) {
@@ -50,19 +60,19 @@ export default class News extends Component {
     }
 
     getSelectedValue() {
-        var selectedValue = document.getElementById("choice").value;
-        return { selectedValue }
+        this.setState(() => {
+            var selectedValue = document.getElementById("choice").value;
+            return { newsSource: selectedValue }
+        })
     }
 
-
     render() {
-        //console.log(this.state);
         return (
             <>
                 <div>
                     <select id="choice" onChange={this.getSelectedValue}>
-                        <option value="all-articles" defaultValue>All articles</option>
-                        <option value="reuters-articles">Reuters</option>
+                        <option value="all" defaultValue>All articles</option>
+                        <option value="reuters">Reuters</option>
                     </select>
                 </div>
                 <div className="News">
@@ -86,5 +96,4 @@ export default class News extends Component {
             </>
         );
     }
-
 }
