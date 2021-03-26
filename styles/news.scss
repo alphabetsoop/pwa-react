@@ -6,12 +6,14 @@
 
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
-
+.newsOverview {
+    text-align: center;
+}
 .news-card {
-    border: solid 2px black;
+    //border: solid 2px black;
     padding: 18px;
     margin: 18px;
-    border-radius: 25px;
+    //border-radius: 25px;
     box-shadow: 0 0 12px 0 rgba(black, 0.4);
 
     img {
@@ -51,4 +53,14 @@
 
 .news-button {
     text-align: center;
+    button {
+        background-color: green;
+        box-shadow: 0 0 12px 0 rgba(black, 0.4);
+        color: white;
+        padding: 15px 32px;
+        font-size: 16px;
+    }
+    button:hover {
+        background-color: #4CAF50;
+    }
 }

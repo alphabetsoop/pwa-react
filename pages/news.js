@@ -4,7 +4,12 @@ import News from '../components/news'
 const news = () => {
     return (
         <div>
-            <h1>News</h1>
+            <div className="newsOverview">
+                <h1>Recycling News</h1>
+                <br />
+                <p>Read about how recycling is influencing your community.</p>
+            </div>
+            <br />
             <News />
         </div>
     )

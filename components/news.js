@@ -69,7 +69,7 @@ export default class News extends Component {
     render() {
         return (
             <>
-                <div>
+                <div className="newsOverview">
                     <select id="choice" onChange={this.getSelectedValue}>
                         <option value="all" defaultValue>All articles</option>
                         <option value="reuters">Reuters</option>
@@ -78,13 +78,10 @@ export default class News extends Component {
                 <div className="News">
                     {this.state.articles.slice(0, this.state.numArticles).map((item, index) => {
                         return (
-                            <div class="news-card">
-                                <img src={item.urlToImage}></img>
-                                <br />
+                            <div className="news-card">
                                 <h2>{item.title}</h2>
                                 <br />
                                 <p>{item.content}</p>
-                                <br />
                                 <a href={item.url} target="_blank">Read Article</a>
                             </div>
                         )
