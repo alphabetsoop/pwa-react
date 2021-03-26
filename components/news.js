@@ -87,7 +87,10 @@ export default class News extends Component {
                         )
                     })}
                 </div>
-                <div className="news-button">
+                <div className="news-button mobile">
+                    <button type="button" onClick={this.loadMoreArticles}>+</button>
+                </div>
+                <div className="news-button desktop">
                     <button type="button" onClick={this.loadMoreArticles}>Load More</button>
                 </div>
             </>

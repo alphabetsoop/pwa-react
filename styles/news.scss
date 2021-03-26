@@ -52,15 +52,43 @@
 }
 
 .news-button {
+    position: fixed;
     text-align: center;
     button {
+        border: none;
+        box-shadow: 0 0 12px 0 rgba(black, 0.8);
         background-color: green;
         box-shadow: 0 0 12px 0 rgba(black, 0.4);
         color: white;
-        padding: 15px 32px;
         font-size: 16px;
     }
     button:hover {
         background-color: #4CAF50;
+    }
+    &.mobile {
+        bottom: 100px;
+        right: 40px;
+        button {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+        }
+    }
+    &.desktop {
+        bottom: 40px;
+        right: 40px;
+        display: none;
+        button {
+            padding: 15px 32px;
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .news-button.mobile {
+        display: none;
+    }
+    .news-button.desktop {
+        display: block;
     }
 }
