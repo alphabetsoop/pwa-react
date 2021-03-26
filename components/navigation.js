@@ -22,9 +22,9 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 const navigation = (props) => {
 
   const [isDialogVisible, setDialogVisible] = useState(false)
-  const [emauthAddress, setEmauthAddress] = useState("")
-  const [emauthPassword, setEmauthPassword] = useState("")
-  const dialogFullScreen = useMediaQuery(useTheme().breakpoints.down('sm'))
+  const dialogFullScreen = useMediaQuery(useTheme().breakpoints.down('sm')) 
+  // let window = null 
+  let window = (typeof window !== "undefined") ? window : null 
 
   // change dialog visibility
   function handleClickAccount() {
@@ -49,12 +49,12 @@ const navigation = (props) => {
             <a>Challenges</a>
           </Link>
           <Link href="/#">
-            <a onClick={handleClickAccount}>Sign in</a>
+            <a onClick={handleClickAccount}> { (window && window.user && window.user.email) ? window.user.email : "Account" } </a> 
           </Link>
-          <Button onClick={handleClickAccount}>
-            Create an account
-          </Button>
-      
+          {/* <Button onClick={handleClickAccount}> 
+            Create an account 
+          </Button> */} 
+           
         </Toolbar>
       </AppBar>
 
@@ -62,10 +62,6 @@ const navigation = (props) => {
         fullScreen={dialogFullScreen}
         open={isDialogVisible}
         onClose={handleClickAccount}
-        emauthAddress={emauthAddress}
-        handleChangeEmail={setEmauthAddress}
-        emauthPassword={emauthPassword}
-        handleChangePassword={setEmauthPassword}
       />
       
       <AppBar id="top-nav__mobile" className="top-nav" position="sticky">

@@ -1,15 +1,16 @@
 import firebase from "firebase";
-
-const firebaseConfig = {
-    apiKey: "AIzaSyDshtVAuVxMEb1CKhBAaHfQCVdLyCWjQAM",
-    authDomain: "solvert.firebaseapp.com",
-    projectId: "solvert",
-    storageBucket: "solvert.appspot.com",
-    messagingSenderId: "291677259136",
-    appId: "1:291677259136:web:3bf2d67874def8f219ad65",
-    measurementId: "G-QBEHX2PZ1C",
-};
-
+ 
+const firebaseConfig = { 
+  apiKey: "AIzaSyAx_DafugLAAuF-6yoKJ5I5txR4-9FS8f0", 
+  authDomain: "atomic-voice-305505.firebaseapp.com", 
+  databaseURL: "https://atomic-voice-305505-default-rtdb.firebaseio.com", 
+  projectId: "atomic-voice-305505", 
+  storageBucket: "atomic-voice-305505.appspot.com", 
+  messagingSenderId: "654579013198", 
+  appId: "1:654579013198:web:f7b29bca08c076015b951f", 
+  measurementId: "G-SF26KH527V" 
+}; 
+ 
 let firebaseApp
 
 if (!firebase.apps.length) {
@@ -32,3 +33,5 @@ firebase.auth().onAuthStateChanged( (user) => {
 
 const db = firebaseApp.firestore();
 export default db;
+export const firebaseAuth = firebase.auth 
+ 
