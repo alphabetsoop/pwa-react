@@ -1,0 +1,40 @@
+{
+  "centers": [
+    {
+      "name": "Republic Services of Plano",
+      "city": "Plano",
+      "state": "Texas",
+      "zip":	"75074",
+      "street": "4200 14th St",
+      "phone": 	"972-422-2341",
+      "hours": 	"8AM-5PM"
+    },
+    {
+      "name": "Community Recycling",
+      "city": "Plano",
+      "state": "Texas",
+      "zip": "75074",
+      "street": "917 K Ave",
+      "phone": "972-423-3824",
+      "hours": "8AM-5PM"
+    },
+    {
+    	"name": "Green Glove IT Recycling",
+    	"city": "Plano",
+    	"state": "Texas",
+    	"zip": "75074",
+    	"state": "1200 Placid Ave #500",
+    	"phone": "800-228-5016",
+    	"hours": "9AM-4:30PM"
+    },
+     {
+    	"name": "Dallas Recycling",
+    	"city": "Dallas",
+    	"state": "Texas",
+    	"zip": "75212",
+    	"state": "3303 Pluto St",
+    	"phone": "214-634-1831",
+    	"hours": "24 Hours"
+    }
+  ]
+}
