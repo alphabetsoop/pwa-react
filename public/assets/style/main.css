@@ -1,0 +1,178 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+html {
+  font-size: 1rem;
+}
+
+body {
+  height: 100vh;
+  background-color: #efefef;
+  color: #222222;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+  overflow: hidden;
+}
+
+#main-nav {
+  background-color: lightblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 4rem;
+}
+
+#main-nav #nav-logo {
+  height: 2rem;
+}
+
+#main-nav #nav-hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+#main-nav #nav-hamburger::before {
+  font-size: 1.25rem;
+}
+
+#main-nav ul {
+  -webkit-transition: right 100ms linear;
+  transition: right 100ms linear;
+  right: -10rem;
+  z-index: 100;
+  top: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#main-nav ul.open {
+  right: 0;
+}
+
+#main-nav ul li {
+  margin-left: 1rem;
+}
+
+@media only screen and (max-width: 700px) {
+  #main-nav {
+    padding: 0;
+    position: relative;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  }
+  #main-nav #nav-logo {
+    margin: 1rem 2rem;
+  }
+  #main-nav #nav-hamburger {
+    display: block;
+    padding: 1rem 2rem;
+  }
+  #main-nav ul {
+    position: absolute;
+    background-color: black;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 1rem 0;
+  }
+  #main-nav ul li {
+    margin-left: 0;
+    padding: 1rem;
+  }
+  #main-nav ul li a {
+    padding: 1rem;
+    color: white;
+  }
+}
+
+#home-page {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -ms-grid-rows: 1fr auto auto 1fr;
+      grid-template-rows: 1fr auto auto 1fr;
+}
+
+#home-page #home-facts {
+  padding: 1rem 2rem;
+}
+
+#home-page a {
+  margin: 2rem 0;
+}
+
+#home-page a button {
+  cursor: pointer;
+  padding: 2rem;
+  width: 80vw;
+  border-radius: 5px;
+  font-size: 1.25rem;
+}
+
+#challenges-page #challenges-container > div {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 2rem;
+  place-items: center;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  margin: 1rem 2rem;
+  border-radius: 10px;
+}
+
+#challenges-page #challenges-container > div button {
+  border: none;
+  background-color: #505FBB;
+  color: #fcfcfc;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+#challenges-page #challenges-container > div .card-title {
+  font-size: 1.1rem;
+  color: #505FBB;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+#challenges-page #challenges-container > div .card-description {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+#challenges-page #challenges-container > div div:last-of-type {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,116 @@
+@import "variables.sass"
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+ul
+  list-style: none
+
+a
+  text-decoration: none
+  color: black
+
+html
+  font-size: 1rem
+
+body
+  height: 100vh
+  background-color: $background-color
+  color: $black
+  display: grid
+  grid-template-rows: auto 1fr
+  overflow: hidden
+
+#main-nav
+  background-color: lightblue
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 1rem 4rem
+  #nav-logo
+    height: 2rem
+  #nav-hamburger
+    display: none
+    cursor: pointer
+    &::before
+      font-size: 1.25rem
+  ul
+    transition: right 100ms linear
+    right: -10rem
+    z-index: 100
+    top: 100%
+    display: flex
+    &.open
+      right: 0
+    li
+      margin-left: 1rem
+
+@media only screen and ( max-width: 700px )
+  #main-nav
+    padding: 0
+    position: relative
+    box-shadow: 0 0 10px 0 rgba(black, 0.5)
+    #nav-logo
+      margin: 1rem 2rem
+    #nav-hamburger
+      display: block
+      padding: 1rem 2rem
+    ul
+      position: absolute
+      background-color: black
+      flex-direction: column
+      padding: 1rem 0
+      li
+        margin-left: 0
+        padding: 1rem
+        a
+          padding: 1rem
+          color: white
+
+#home-page
+  display: grid
+  place-items: center
+  grid-template-rows: 1fr auto auto 1fr
+  #home-facts
+    padding: 1rem 2rem
+  a
+    margin: 2rem 0
+    button
+      cursor: pointer
+      padding: 2rem
+      width: 80vw
+      border-radius: 5px
+      font-size: 1.25rem
+
+#challenges-page
+  #challenges-container
+    > div
+      background-color: white
+      display: flex
+      justify-content: space-between
+      padding: 1rem 2rem
+      place-items: center
+      box-shadow: 0 0 10px 0 rgba(black, 0.5)
+      margin: 1rem 2rem
+      border-radius: 10px
+      button
+        border: none
+        background-color: #505FBB
+        color: $white
+        padding: 0.5rem 1rem
+        border-radius: 5px
+        box-shadow: 0 0 4px rgba(black, 0.5)
+      .card-title
+        font-size: 1.1rem
+        color: #505FBB
+        font-weight: 600
+        margin-bottom: 0.5rem
+      .card-description
+        font-size: 0.8rem
+        margin-bottom: 1rem
+      div:last-of-type
+        display: grid
+        place-items: center
+      
